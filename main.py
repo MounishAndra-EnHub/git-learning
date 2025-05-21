@@ -20,7 +20,7 @@ def index():
         email = request.form.get("email")
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
+        cursor.execute("INSERT INTO employee (name, email) VALUES (%s, %s)", (name, email))
         conn.commit()
         conn.close()
         return "Data submitted!"
